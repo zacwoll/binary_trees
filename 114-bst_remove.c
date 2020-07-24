@@ -1,7 +1,9 @@
 #include "binary_trees.h"
 
-/* apparently the next in order successor unless there is no successor,
- * then it's the predecessor
+/**
+ * in_order_successor - finds the next in-order successor to a binary tree node
+ * @root: root of binary tree to search
+ * Return: bst_t *successor or NULL
  */
 bst_t *in_order_successor(bst_t *root)
 {
@@ -20,6 +22,12 @@ bst_t *in_order_successor(bst_t *root)
 	return (root);
 }
 
+/**
+ * bst_remove - removes a node from a binary tree
+ * @root: root of binary tree to search
+ * @value: key of node to remove
+ * Return: bst_t *root or NULL
+ */
 bst_t *bst_remove(bst_t *root, int value)
 {
 	bst_t *delete = NULL;
@@ -27,7 +35,6 @@ bst_t *bst_remove(bst_t *root, int value)
 
 	if (!root)
 		return (NULL);
-	printf("%d\n", root->n);
 	/* find node to be deleted */
 	delete = bst_search(root, value);
 	if (!delete)

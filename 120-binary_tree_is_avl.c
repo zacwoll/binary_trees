@@ -10,7 +10,7 @@ int binary_tree_balance(const binary_tree_t *tree)
 	int lh, rh;
 
 	if (!tree)
-	   return (0);
+		return (0);
 
 	lh = binary_tree_height(tree->left);
 	rh = binary_tree_height(tree->right);
@@ -39,8 +39,15 @@ size_t binary_tree_height(const binary_tree_t *tree)
 		return (rh + 1);
 }
 
+/**
+ * is_bst - checks if a binary tree is a perfect binary search  tree
+ * @tree: tree to be checked
+ * @min: minimum value of subtree
+ * @max: maximum value of subtree
+ * Return: 1 if perfect, else 0
+ */
 int is_bst(const binary_tree_t *tree, const binary_tree_t *min,
-                const binary_tree_t *max)
+		const binary_tree_t *max)
 {
 	if (!tree)
 		return (1);
@@ -52,6 +59,11 @@ int is_bst(const binary_tree_t *tree, const binary_tree_t *min,
 	return (is_bst(tree->left, min, tree) & is_bst(tree->right, tree, max));
 }
 
+/**
+ * is_balanced - checks if a binary tree is balanced
+ * @tree: tree to be checked
+ * Return: 1 if balanced, else 0
+ */
 int is_balanced(const binary_tree_t *tree)
 {
 	int balance;
@@ -66,6 +78,11 @@ int is_balanced(const binary_tree_t *tree)
 	return (0);
 }
 
+/**
+ * binary_tree_is_avl - checks if a binary tree is avl
+ * @tree: tree to be checked
+ * Return: 1 if AVL, else 0
+ */
 int binary_tree_is_avl(const binary_tree_t *tree)
 {
 	if (!tree)

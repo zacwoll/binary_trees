@@ -1,5 +1,11 @@
 #include "binary_trees.h"
 
+/**
+ * _bst_insert - binary search tree insertion method
+ * @tree: tree to be searched and inserted
+ * @value: value to be placed in node
+ * Return: bst * to node or NULL
+ */
 bst_t *_bst_insert(bst_t *tree, int value)
 {
 	if (value < tree->n)
@@ -19,9 +25,11 @@ bst_t *_bst_insert(bst_t *tree, int value)
 	return (NULL);
 }
 
-/* find correct parent
- * node node
- * place in left or right of parent
+/**
+ * bst_insert - insert into binary search tree
+ * @tree: tree to be binary searched
+ * @value: value to be inserted
+ * Return: bst_t * or NULL
  */
 bst_t *bst_insert(bst_t **tree, int value)
 {
