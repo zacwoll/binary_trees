@@ -54,7 +54,7 @@ avl_t *balance_right(avl_t *node)
  */
 avl_t *rebalance(avl_t *node, avl_t **tree)
 {
-	avl_t *tmp, *root, *ret = NULL;
+	avl_t *tmp, *root;
 	int bal;
 
 	tmp = node;
